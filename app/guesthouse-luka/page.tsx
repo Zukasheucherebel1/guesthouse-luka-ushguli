@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
-import "./luka.css";
-
-const bookingUrl = "https://www.booking.com/hotel/ge/guesthouse-luka-ushguli.en-gb.html";
+import LukaNav from "./LukaNav";
+import {bookingUrl, roomList} from "./data";
 
 export const metadata: Metadata = {
   title: "Guesthouse Luka — Stay in Ushguli",
@@ -9,13 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Guesthouse Luka — Ushguli, Georgia",
     description: "Warm rooms, local food and ancient Svan towers at your doorstep.",
-    images: ["https://zura-khorguani-portfolio.m-khorguani.chatgpt.site/guesthouse-luka/hero-svaneti.jpg"],
+    images: ["https://zura-khorguani-portfolio.m-khorguani.chatgpt.site/guesthouse-luka/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Guesthouse Luka — Ushguli, Georgia",
     description: "Warm rooms, local food and ancient Svan towers at your doorstep.",
-    images: ["https://zura-khorguani-portfolio.m-khorguani.chatgpt.site/guesthouse-luka/hero-svaneti.jpg"],
+    images: ["https://zura-khorguani-portfolio.m-khorguani.chatgpt.site/guesthouse-luka/og.png"],
   },
 };
 
@@ -36,21 +35,7 @@ const amenities = [
 export default function GuesthouseLuka() {
   return (
     <main className="luka">
-      <nav className="lukaNav" aria-label="Main navigation">
-        <a className="lukaBrand" href="#home" aria-label="Guesthouse Luka home">
-          <span>GL</span>
-          <b>Guesthouse Luka</b>
-        </a>
-        <div className="lukaNavLinks">
-          <a href="#story">Our story</a>
-          <a href="#stay">Rooms</a>
-          <a href="#experience">Experience</a>
-          <a href="#location">Location</a>
-        </div>
-        <a className="lukaBook lukaBookLight" href={bookingUrl} target="_blank" rel="noreferrer">
-          Check availability <span>↗</span>
-        </a>
-      </nav>
+      <LukaNav />
 
       <header className="lukaHero" id="home">
         <img src="/guesthouse-luka/hero-svaneti.jpg" alt="The Caucasus mountains above Ushguli in Upper Svaneti" />
@@ -60,7 +45,7 @@ export default function GuesthouseLuka() {
           <h1>Sleep beneath<br />the <em>Svan towers.</em></h1>
           <div className="lukaHeroBottom">
             <p>A warm family guesthouse in the UNESCO-listed heart of Upper Svaneti, with mountain views, local food and centuries of history outside the door.</p>
-            <a className="lukaPrimary" href={bookingUrl} target="_blank" rel="noreferrer">See rooms & prices <span>↗</span></a>
+            <a className="lukaPrimary" href="/guesthouse-luka/book">See rooms & prices <span>→</span></a>
           </div>
         </div>
         <div className="lukaHeroProperty">
@@ -104,23 +89,27 @@ export default function GuesthouseLuka() {
           <h2>Rest well.<br /><em>Wake somewhere<br />unforgettable.</em></h2>
           <p>Warm, clean rooms with heating, mountain views and everything you need after a day in the Caucasus.</p>
         </div>
-        <div className="lukaRoomList">
-          <article>
-            <span>01</span>
-            <div><h3>Double Room</h3><p>15 m² · 2 single beds · Shared bathroom</p></div>
-            <b>Up to 2 guests</b>
-          </article>
-          <article>
-            <span>02</span>
-            <div><h3>Budget Triple Room</h3><p>18 m² · 3 single beds · Shared bathroom</p></div>
-            <b>Up to 3 guests</b>
-          </article>
+        <div className="lukaRoomCards">
+          {roomList.map((room, index) => (
+            <article key={room.key}>
+              <a className="lukaRoomCardImage" href={`/guesthouse-luka/rooms/${room.slug}`}>
+                <img src={room.hero} alt={`${room.name} at Guesthouse Luka`} />
+                <span>0{index + 1}</span>
+              </a>
+              <div><p>{room.size} · {room.beds} · Up to {room.guests} guests</p><h3>{room.name}</h3><p>{room.description}</p><a href={`/guesthouse-luka/rooms/${room.slug}`}>View room details <span>→</span></a></div>
+            </article>
+          ))}
           <div className="lukaRoomNotes">
-            <p>INCLUDED</p>
-            <span>Heating</span><span>Free Wi-Fi</span><span>Mountain view</span><span>Hairdryer</span><span>Shower</span><span>Toiletries</span>
+            <p>EVERY STAY INCLUDES</p>
+            <span>Heating</span><span>Free Wi-Fi</span><span>Mountain view</span><span>Hairdryer</span><span>Hot shower</span><span>Toiletries</span>
           </div>
-          <a className="lukaPrimary lukaPrimaryDark" href={bookingUrl} target="_blank" rel="noreferrer">Check live availability <span>↗</span></a>
+          <a className="lukaPrimary lukaPrimaryDark" href="/guesthouse-luka/book">Compare booking options <span>→</span></a>
         </div>
+      </section>
+
+      <section className="lukaChannels">
+        <div><p className="lukaKicker">BOOK THE WAY YOU TRUST</p><h2>One stay.<br /><em>Three booking options.</em></h2></div>
+        <div><a href="/guesthouse-luka/book"><b>WhatsApp</b><span>Message the owner directly</span><i>01 ↗</i></a><a href="/guesthouse-luka/book"><b>Booking.com</b><span>Check live prices and policies</span><i>02 ↗</i></a><a href="/guesthouse-luka/book"><b>Airbnb</b><span>Guest Favourite · 4.71/5</span><i>03 ↗</i></a></div>
       </section>
 
       <section className="lukaExperience" id="experience">
@@ -179,7 +168,7 @@ export default function GuesthouseLuka() {
         <div>
           <p>YOUR SVANETI STORY STARTS HERE</p>
           <h2>Come for the views.<br /><em>Stay for the welcome.</em></h2>
-          <a className="lukaPrimary" href={bookingUrl} target="_blank" rel="noreferrer">Check rooms on Booking.com <span>↗</span></a>
+          <a className="lukaPrimary" href="/guesthouse-luka/book">Choose how to book <span>→</span></a>
         </div>
       </section>
 
@@ -188,7 +177,7 @@ export default function GuesthouseLuka() {
         <p>Property imagery from the Guesthouse Luka Booking.com listing. Hero landscape: <a href="https://commons.wikimedia.org/wiki/File:Svaneti_-_Ushguli_(9458072993).jpg" target="_blank" rel="noreferrer">Andrzej Wójtowicz, CC BY-SA 2.0</a>. Demo by Zura Khorguani.</p>
       </footer>
 
-      <a className="lukaMobileBook" href={bookingUrl} target="_blank" rel="noreferrer">Check availability <span>↗</span></a>
+      <a className="lukaMobileBook" href="/guesthouse-luka/book">Check availability <span>→</span></a>
     </main>
   );
 }
