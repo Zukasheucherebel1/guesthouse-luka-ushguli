@@ -1,360 +1,271 @@
 .luka {
-  --ink: #17201b;
-  --pine: #173c32;
-  --pine-dark: #0e2922;
-  --paper: #f2eee3;
-  --sand: #d8c9ae;
-  --copper: #bc5838;
-  --peach: #edb08e;
+  --ink: #18201c;
+  --muted: #667069;
+  --pine: #17372f;
+  --pine-deep: #102821;
+  --paper: #f6f3ec;
+  --card: #fffdf8;
+  --line: #d9d5cb;
+  --copper: #a84d31;
+  --soft: #e6dfd1;
   background: var(--paper);
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
   overflow: hidden;
 }
 
 .luka *, .luka *::before, .luka *::after { box-sizing: border-box; }
 .luka img { display: block; max-width: 100%; }
 .luka a { color: inherit; }
-.luka em { color: var(--copper); font-weight: 400; }
+.luka em { color: var(--copper); font-style: italic; font-weight: 400; }
+.luka h1, .luka h2, .luka h3, .luka p { margin-top: 0; }
+.luka[lang="ka"] h1, .luka[lang="ka"] h2, .luka[lang="ka"] h3 { font-family: Arial, Helvetica, sans-serif; letter-spacing: -.035em; }
+.luka[lang="ka"] em { font-style: normal; }
 
 .lukaNav {
   align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,.3);
+  border-bottom: 1px solid rgba(255,255,255,.28);
   color: white;
   display: flex;
-  height: 92px;
+  height: 72px;
   justify-content: space-between;
   left: 0;
-  padding: 0 4vw;
+  padding: 0 max(24px, calc((100vw - 1180px) / 2));
   position: absolute;
   right: 0;
   top: 0;
   z-index: 20;
 }
 
-.lukaBrand { align-items: center; display: flex; gap: 12px; text-decoration: none; }
-.lukaBrand span { border: 1px solid rgba(255,255,255,.75); display: grid; font: 12px Georgia, serif; height: 36px; place-items: center; width: 36px; }
-.lukaBrand b { font: 21px Georgia, serif; font-weight: 400; }
-.lukaNavLinks { display: flex; gap: 30px; }
-.lukaNavLinks a { font-size: 11px; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
-.lukaBook { align-items: center; display: inline-flex; font-size: 10px; font-weight: 700; gap: 22px; letter-spacing: .11em; padding: 14px 17px; text-decoration: none; text-transform: uppercase; }
-.lukaBookLight { border: 1px solid rgba(255,255,255,.8); }
+.lukaNavSolid { background: var(--paper); border-bottom-color: var(--line); color: var(--ink); position: relative; }
+.lukaBrand { align-items: center; display: flex; gap: 10px; text-decoration: none; white-space: nowrap; }
+.lukaBrand span { align-items: center; border: 1px solid currentColor; display: flex; font: 11px Georgia, serif; height: 30px; justify-content: center; width: 30px; }
+.lukaBrand b { font: 18px Georgia, serif; font-weight: 400; }
+.lukaNavLinks { align-items: center; display: flex; gap: 24px; }
+.lukaNavLinks a, .lukaLang { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+.lukaNavActions { align-items: center; display: flex; gap: 12px; }
+.lukaLang { border: 1px solid rgba(255,255,255,.55); min-width: 42px; padding: 10px 9px; text-align: center; }
+.lukaNavSolid .lukaLang { border-color: var(--line); }
+.lukaBook { align-items: center; border: 1px solid rgba(255,255,255,.7); display: inline-flex; font-size: 10px; font-weight: 700; gap: 14px; letter-spacing: .1em; padding: 11px 14px; text-decoration: none; text-transform: uppercase; }
+.lukaNavSolid .lukaBook { border-color: var(--ink); }
 
-.lukaHero { color: white; height: 100svh; min-height: 760px; overflow: hidden; position: relative; }
-.lukaHero > img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
-.lukaHeroShade { background: linear-gradient(90deg, rgba(6,25,20,.83) 0%, rgba(6,25,20,.36) 52%, rgba(6,25,20,.08) 80%), linear-gradient(0deg, rgba(5,24,19,.8), transparent 55%); inset: 0; position: absolute; }
-.lukaHeroCopy { bottom: 10vh; left: 5vw; max-width: 1000px; position: absolute; z-index: 2; }
-.lukaEyebrow, .lukaKicker { font-size: 10px; font-weight: 700; letter-spacing: .22em; line-height: 1.5; text-transform: uppercase; }
-.lukaHeroCopy h1 { font: clamp(68px, 9.2vw, 142px)/.8 Georgia, serif; letter-spacing: -.065em; margin: 28px 0 48px; }
-.lukaHeroCopy h1 em { color: var(--peach); }
-.lukaHeroBottom { align-items: center; display: flex; gap: 80px; }
-.lukaHeroBottom > p { font: 17px/1.65 Georgia, serif; margin: 0; max-width: 530px; }
-.lukaPrimary { align-items: center; background: var(--copper); color: white !important; display: inline-flex; flex-shrink: 0; font-size: 11px; font-weight: 700; gap: 34px; letter-spacing: .09em; padding: 20px 23px; text-decoration: none; text-transform: uppercase; transition: background .25s, transform .25s; }
-.lukaPrimary:hover { background: #a5452b; transform: translateY(-2px); }
-.lukaHeroProperty { background: var(--paper); bottom: 0; color: var(--ink); display: grid; grid-template-columns: 148px 190px; position: absolute; right: 4vw; z-index: 3; }
-.lukaHeroProperty img { height: 118px; object-fit: cover; width: 148px; }
-.lukaHeroProperty div { display: flex; flex-direction: column; justify-content: center; padding: 20px; }
-.lukaHeroProperty span { font-size: 8px; letter-spacing: .17em; margin-bottom: 10px; }
-.lukaHeroProperty b { font: 16px/1.2 Georgia, serif; font-weight: 400; }
-.lukaScroll { align-items: center; bottom: auto; display: flex; font-size: 8px; gap: 13px; left: auto; letter-spacing: .18em; position: absolute; right: 1.8vw; top: 132px; writing-mode: vertical-rl; z-index: 3; }
-.lukaScroll i { font-style: normal; }
+.lukaHero { color: white; height: min(78svh, 790px); min-height: 620px; overflow: hidden; position: relative; }
+.lukaHero > img { height: 100%; object-fit: cover; object-position: center 46%; position: absolute; width: 100%; }
+.lukaHeroShade { background: linear-gradient(90deg, rgba(8,27,22,.78), rgba(8,27,22,.3) 58%, rgba(8,27,22,.08)), linear-gradient(0deg, rgba(8,27,22,.55), transparent 52%); inset: 0; position: absolute; }
+.lukaHeroCopy { bottom: 68px; left: max(24px, calc((100vw - 1180px) / 2)); max-width: 700px; position: absolute; z-index: 2; }
+.lukaEyebrow, .lukaKicker { font-size: 9px; font-weight: 700; letter-spacing: .2em; line-height: 1.5; text-transform: uppercase; }
+.lukaHeroCopy h1 { font: clamp(48px, 6vw, 78px)/.98 Georgia, serif; letter-spacing: -.05em; margin: 18px 0 22px; }
+.lukaHeroCopy h1 em { color: #efbd9f; }
+.lukaHeroText { font-size: 15px; line-height: 1.65; margin-bottom: 28px; max-width: 530px; }
+.lukaPrimary { align-items: center; background: var(--copper); color: white !important; display: inline-flex; font-size: 10px; font-weight: 700; gap: 22px; letter-spacing: .1em; padding: 15px 18px; text-decoration: none; text-transform: uppercase; transition: background .2s, transform .2s; }
+.lukaPrimary:hover { background: #8f3f29; transform: translateY(-1px); }
 
-.lukaTrust { align-items: stretch; background: var(--pine-dark); color: white; display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); padding: 0 5vw; }
-.lukaTrust > p { align-items: center; display: flex; font-size: 9px; font-weight: 700; letter-spacing: .2em; margin: 0; }
-.lukaTrust > div { align-items: center; border-left: 1px solid rgba(255,255,255,.14); display: flex; gap: 12px; justify-content: center; min-height: 112px; }
-.lukaTrust b { font: 36px Georgia, serif; font-weight: 400; }
-.lukaTrust span { color: #b7c4be; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.lukaTrust { background: var(--pine-deep); color: white; display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); margin: 0 auto; padding: 0 max(24px, calc((100vw - 1180px) / 2)); }
+.lukaTrust > div { align-items: center; border-left: 1px solid rgba(255,255,255,.13); display: flex; gap: 12px; min-height: 82px; padding: 0 24px; }
+.lukaTrust > div:first-child { border-left: 0; padding-left: 0; }
+.lukaTrust b { font: 27px Georgia, serif; font-weight: 400; }
+.lukaTrust span { color: #c3cdc8; font-size: 9px; letter-spacing: .08em; line-height: 1.45; text-transform: uppercase; }
 
-.lukaStory { display: grid; gap: 5vw; grid-template-columns: 1.05fr .8fr .65fr; padding: 130px 6vw; }
-.lukaStory h2, .lukaStay h2, .lukaExperience h2, .lukaReview h2, .lukaSeasons h2, .lukaLocation h2, .lukaCta h2 { font: clamp(52px, 6.5vw, 100px)/.91 Georgia, serif; letter-spacing: -.055em; margin: 26px 0 0; }
-.lukaStoryImage { align-self: end; position: relative; }
-.lukaStoryImage img { aspect-ratio: .82; object-fit: cover; width: 100%; }
-.lukaStoryImage span, .lukaExperiencePhoto span { background: var(--paper); bottom: 0; font-size: 8px; letter-spacing: .18em; padding: 13px 16px; position: absolute; right: 0; }
-.lukaStoryCopy { align-self: end; padding-bottom: 4px; }
-.lukaStoryCopy p { font-size: 14px; line-height: 1.75; }
-.lukaStoryCopy .lukaLead { font: 22px/1.55 Georgia, serif; }
-.lukaStoryCopy a { display: inline-flex; font-size: 10px; font-weight: 700; gap: 30px; letter-spacing: .13em; margin-top: 25px; text-transform: uppercase; }
+.lukaQuickBooking { align-items: start; display: grid; gap: 48px; grid-template-columns: 260px 1fr; margin: 0 auto; max-width: 1180px; padding: 66px 24px 72px; }
+.lukaQuickBooking h2 { font: 28px/1.18 Georgia, serif; letter-spacing: -.03em; margin: 13px 0 0; }
+.lukaBookingWidget { background: var(--card); border: 1px solid var(--line); padding: 24px; }
+.lukaBookingFields { display: grid; gap: 10px; grid-template-columns: 1.15fr repeat(3, 1fr); }
+.lukaBookingFields label { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.lukaBookingFields label > span { color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.lukaBookingFields input, .lukaBookingFields select { appearance: none; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; color: var(--ink); font: 13px Arial, sans-serif; height: 42px; min-width: 0; outline: 0; padding: 0 4px; width: 100%; }
+.lukaBookingFields input:focus, .lukaBookingFields select:focus { border-bottom-color: var(--copper); }
+.lukaBookingError { color: #a63628; font-size: 12px; margin: 14px 0 0; }
+.lukaBookingChannels { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+.lukaBookingChannels > a { align-items: center; border: 1px solid var(--line); display: grid; gap: 10px; grid-template-columns: 32px 1fr auto; min-width: 0; padding: 12px; text-decoration: none; transition: border-color .2s, background .2s; }
+.lukaBookingChannels > a:hover { background: #f6f2e9; border-color: #b9b2a4; }
+.lukaBookingChannels > a.isDisabled { opacity: .45; pointer-events: none; }
+.lukaChannelMark { align-items: center; background: var(--pine); color: white; display: flex; font-size: 9px; font-weight: 700; height: 30px; justify-content: center; width: 30px; }
+.lukaChannelMark.booking { background: #1c57a5; }
+.lukaChannelMark.airbnb { background: #d85161; }
+.lukaBookingChannels b { display: block; font-size: 11px; line-height: 1.3; }
+.lukaBookingChannels small { color: var(--muted); display: block; font-size: 9px; line-height: 1.35; margin-top: 3px; }
+.lukaBookingChannels i { font-size: 12px; font-style: normal; }
+.lukaBookingHelp { align-items: center; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 18px; padding-top: 16px; }
+.lukaBookingHelp span, .lukaBookingHelp a { font-size: 11px; }
+.lukaBookingHelp a { font-weight: 700; }
+.lukaBookingHelp small { color: var(--muted); flex-basis: 100%; font-size: 9px; }
 
-.lukaGallery { background: var(--pine); display: grid; gap: 8px; grid-template-columns: 1.45fr .7fr .7fr; grid-template-rows: 330px 330px; padding: 8px; }
-.lukaGallery figure { margin: 0; overflow: hidden; position: relative; }
-.lukaGallery figure img { height: 100%; object-fit: cover; transition: transform .6s; width: 100%; }
-.lukaGallery figure:hover img { transform: scale(1.025); }
-.lukaGallery figcaption { background: rgba(14,41,34,.88); bottom: 0; color: white; font-size: 8px; letter-spacing: .16em; padding: 13px 16px; position: absolute; }
-.lukaGalleryMain { grid-row: span 2; }
-.lukaGalleryWide { grid-column: span 2; }
+.lukaAbout { align-items: center; display: grid; gap: 7vw; grid-template-columns: 1.05fr .95fr; margin: 0 auto; max-width: 1180px; padding: 88px 24px; }
+.lukaAboutImage img { aspect-ratio: 1.2; object-fit: cover; width: 100%; }
+.lukaAboutCopy { max-width: 470px; }
+.lukaAboutCopy h2, .lukaSectionHead h2, .lukaExperience h2, .lukaLocation h2, .lukaCta h2, .lukaRoomStory h2, .lukaRoomAmenities h2, .lukaRoomBooking h2 { font: clamp(36px, 4.2vw, 54px)/1.02 Georgia, serif; letter-spacing: -.045em; margin: 14px 0 28px; }
+.lukaAboutCopy .lukaLead { font: 19px/1.55 Georgia, serif; }
+.lukaAboutCopy > p:last-child, .lukaSectionHead > p, .lukaExperienceCopy > p, .lukaLocationCopy > p { color: var(--muted); font-size: 14px; line-height: 1.7; }
 
-.lukaStay { background: var(--pine); color: white; display: grid; gap: 8vw; grid-template-columns: .9fr 1.1fr; padding: 130px 7vw; }
-.lukaStay h2 em, .lukaExperience h2 em, .lukaCta h2 em { color: var(--peach); }
-.lukaStayIntro > p:last-child { color: #c2cdc8; line-height: 1.7; margin-top: 38px; max-width: 440px; }
-.lukaRoomList article { align-items: center; border-top: 1px solid rgba(255,255,255,.25); display: grid; gap: 24px; grid-template-columns: 40px 1fr auto; padding: 28px 0; }
-.lukaRoomList article > span { color: #8ea19a; font-size: 9px; }
-.lukaRoomList h3 { font: 28px Georgia, serif; font-weight: 400; margin: 0 0 7px; }
-.lukaRoomList article p { color: #afc0b8; font-size: 12px; margin: 0; }
-.lukaRoomList article b { font-size: 9px; font-weight: 400; letter-spacing: .13em; text-transform: uppercase; }
-.lukaRoomNotes { border-bottom: 1px solid rgba(255,255,255,.25); border-top: 1px solid rgba(255,255,255,.25); display: flex; flex-wrap: wrap; gap: 9px; padding: 24px 0; }
-.lukaRoomNotes p { font-size: 9px; letter-spacing: .16em; margin: 8px 22px 0 0; }
-.lukaRoomNotes span { border: 1px solid rgba(255,255,255,.22); font-size: 9px; padding: 8px 10px; }
-.lukaPrimaryDark { margin-top: 34px; }
+.lukaRooms { background: #eee9df; padding: 84px max(24px, calc((100vw - 1180px) / 2)); }
+.lukaSectionHead { align-items: end; display: grid; gap: 40px; grid-template-columns: 1fr 380px; margin-bottom: 36px; }
+.lukaSectionHead h2 { margin-bottom: 0; }
+.lukaSectionHead > p { margin-bottom: 4px; }
+.lukaRoomCards { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
+.lukaRoomCards article { background: var(--card); border: 1px solid var(--line); }
+.lukaRoomCardImage { display: block; overflow: hidden; }
+.lukaRoomCardImage img { aspect-ratio: 1.55; object-fit: cover; transition: transform .45s; width: 100%; }
+.lukaRoomCardImage:hover img { transform: scale(1.02); }
+.lukaRoomCardCopy { padding: 24px; }
+.lukaRoomCardCopy > p:first-child { color: var(--muted); font-size: 9px; letter-spacing: .12em; margin-bottom: 10px; text-transform: uppercase; }
+.lukaRoomCardCopy h3 { font: 27px/1.2 Georgia, serif; margin-bottom: 10px; }
+.lukaRoomCardCopy h3 + p { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+.lukaRoomCardCopy a { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 
-.lukaExperience { display: grid; grid-template-columns: 1fr 1fr; }
-.lukaExperiencePhoto { min-height: 850px; position: relative; }
-.lukaExperiencePhoto img { height: 100%; object-fit: cover; width: 100%; }
-.lukaExperienceCopy { background: var(--sand); padding: 110px 7vw 80px; }
-.lukaExperienceCopy > p:nth-of-type(2) { font: 18px/1.65 Georgia, serif; max-width: 560px; }
-.lukaAmenities { margin-top: 48px; }
-.lukaAmenities article { border-top: 1px solid rgba(23,32,27,.28); display: grid; gap: 18px; grid-template-columns: 32px 1fr; padding: 19px 0; }
-.lukaAmenities article > span { color: #726b5d; font-size: 9px; margin-top: 6px; }
-.lukaAmenities h3 { font: 20px Georgia, serif; font-weight: 400; margin: 0 0 5px; }
-.lukaAmenities p { font-size: 12px; line-height: 1.5; margin: 0; }
+.lukaExperience { background: var(--pine); color: white; display: grid; grid-template-columns: .9fr 1.1fr; }
+.lukaExperienceCopy { align-self: center; padding: 76px max(48px, calc((100vw - 1180px) / 2)); padding-right: 7vw; }
+.lukaExperienceCopy > p { color: #c5cfca; max-width: 520px; }
+.lukaExperience ul { display: grid; gap: 0; grid-template-columns: repeat(2, 1fr); list-style: none; margin: 30px 0 0; padding: 0; }
+.lukaExperience li { border-top: 1px solid rgba(255,255,255,.18); font-size: 11px; padding: 15px 0; }
+.lukaExperience li:nth-child(odd) { margin-right: 20px; }
+.lukaExperience > img { height: 100%; max-height: 620px; min-height: 500px; object-fit: cover; width: 100%; }
 
-.lukaReview { padding: 125px 7vw; text-align: center; }
-.lukaReview h2 { font-size: clamp(48px, 6vw, 86px); }
-.lukaReviewGrid { display: grid; grid-template-columns: repeat(4,1fr); margin: 80px auto 0; max-width: 1100px; }
-.lukaReviewGrid > div { border-left: 1px solid #beb9ae; display: flex; flex-direction: column; padding: 10px 35px; position: relative; }
-.lukaReviewGrid > div:last-child { border-right: 1px solid #beb9ae; }
-.lukaReviewGrid b { font: 46px Georgia, serif; font-weight: 400; }
-.lukaReviewGrid span { font-size: 8px; letter-spacing: .17em; margin: 8px 0 18px; }
-.lukaReviewGrid i { background: #d1ccc1; height: 2px; overflow: hidden; position: relative; }
-.lukaReviewGrid i::after { background: var(--copper); content: ""; height: 100%; left: 0; position: absolute; width: 92%; }
-.lukaReviewNote { color: #716f69; font-size: 10px; margin-top: 28px; }
+.lukaLocation { align-items: center; display: grid; gap: 7vw; grid-template-columns: 1.1fr .9fr; margin: 0 auto; max-width: 1180px; padding: 88px 24px; }
+.lukaLocation > img { aspect-ratio: 1.32; object-fit: cover; width: 100%; }
+.lukaLocationCopy { max-width: 440px; }
+.lukaLocationCopy a { display: inline-flex; font-size: 10px; font-weight: 700; gap: 18px; letter-spacing: .1em; margin-top: 14px; text-transform: uppercase; }
 
-.lukaSeasons { background: var(--pine-dark); color: white; display: grid; grid-template-columns: .8fr 1.2fr; min-height: 660px; }
-.lukaSeasons > div:first-child img { height: 100%; object-fit: cover; width: 100%; }
-.lukaSeasons > div:last-child { align-self: center; padding: 90px 8vw; }
-.lukaSeasons h2 { font-size: clamp(48px, 6vw, 88px); }
-.lukaSeasons h2 em { color: var(--peach); }
-.lukaSeasons > div:last-child > p:last-child { color: #bac6c1; line-height: 1.7; margin-top: 35px; max-width: 560px; }
-
-.lukaLocation { display: grid; gap: 8vw; grid-template-columns: .75fr 1.25fr; padding: 130px 7vw; }
-.lukaLocationCopy > p:not(.lukaKicker) { font: 18px Georgia, serif; margin: 32px 0 14px; }
-.lukaLocationCopy ul { color: #666b67; font-size: 12px; line-height: 2; list-style: none; padding: 0; }
-.lukaLocationCopy > a { display: inline-flex; font-size: 10px; font-weight: 700; gap: 25px; letter-spacing: .12em; margin-top: 24px; text-transform: uppercase; }
-.lukaLocationVisual { align-self: center; position: relative; }
-.lukaLocationVisual img { aspect-ratio: 1.45; object-fit: cover; width: 100%; }
-.lukaLocationVisual > div { align-items: center; background: var(--copper); bottom: -34px; color: white; display: flex; gap: 22px; justify-content: space-between; left: 8%; padding: 22px 28px; position: absolute; right: 8%; }
-.lukaLocationVisual b { font: 26px Georgia, serif; font-weight: 400; }
-.lukaLocationVisual span { font-size: 8px; letter-spacing: .12em; }
-
-.lukaCta { color: white; min-height: 720px; overflow: hidden; position: relative; }
+.lukaCta { color: white; min-height: 430px; overflow: hidden; position: relative; }
 .lukaCta > img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
-.lukaCtaShade { background: linear-gradient(rgba(5,24,19,.58), rgba(5,24,19,.8)); inset: 0; position: absolute; }
-.lukaCta > div:last-child { align-items: center; display: flex; flex-direction: column; inset: 0; justify-content: center; padding: 70px 5vw; position: absolute; text-align: center; }
-.lukaCta h2 { font-size: clamp(68px, 8.4vw, 128px); margin-bottom: 52px; }
-.lukaCta p { font-size: 9px; font-weight: 700; letter-spacing: .22em; }
+.lukaCtaShade { background: rgba(10,31,25,.68); inset: 0; position: absolute; }
+.lukaCta > div:last-child { left: 50%; max-width: 800px; position: absolute; text-align: center; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 48px); }
+.lukaCta > div > p { font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+.lukaCta h2 { margin: 18px 0 28px; }
 
-.lukaFooter { align-items: center; background: #091c17; color: white; display: flex; justify-content: space-between; padding: 36px 5vw; }
-.lukaFooter > div { display: flex; flex-direction: column; gap: 6px; }
-.lukaFooter b { font: 21px Georgia, serif; font-weight: 400; }
-.lukaFooter span { color: #9eb0a8; font-size: 9px; letter-spacing: .1em; }
-.lukaFooter p { color: #84978f; font-size: 9px; line-height: 1.5; margin: 0; max-width: 580px; text-align: right; }
+.lukaFooter { align-items: center; background: var(--pine-deep); color: white; display: flex; gap: 40px; justify-content: space-between; padding: 34px max(24px, calc((100vw - 1180px) / 2)); }
+.lukaFooter > div { display: flex; flex-direction: column; gap: 5px; }
+.lukaFooter b { font: 18px Georgia, serif; font-weight: 400; }
+.lukaFooter span { color: #b9c5bf; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.lukaFooter p { color: #9facA5; font-size: 8px; line-height: 1.5; margin: 0; max-width: 540px; text-align: right; }
 .lukaMobileBook { display: none; }
 
-/* Booking-ready room cards */
-.lukaNavSolid { background: var(--pine-dark); position: relative; }
-.lukaRoomCards { display: grid; gap: 34px; }
-.lukaRoomCards article { border-bottom: 1px solid rgba(255,255,255,.25); display: grid; gap: 30px; grid-template-columns: 220px 1fr; padding-bottom: 34px; }
-.lukaRoomCardImage { height: 180px; overflow: hidden; position: relative; }
-.lukaRoomCardImage img { height: 100%; object-fit: cover; transition: transform .45s; width: 100%; }
-.lukaRoomCardImage:hover img { transform: scale(1.04); }
-.lukaRoomCardImage > span { background: white; color: var(--ink); font-size: 9px; left: 0; padding: 9px 11px; position: absolute; top: 0; }
-.lukaRoomCards article > div > p:first-child { color: #9fb1aa; font-size: 9px; letter-spacing: .12em; margin: 3px 0 12px; text-transform: uppercase; }
-.lukaRoomCards h3 { font: 31px Georgia, serif; font-weight: 400; margin: 0 0 10px; }
-.lukaRoomCards article > div > p:nth-of-type(2) { color: #bdc9c4; font-size: 12px; line-height: 1.55; margin: 0 0 18px; }
-.lukaRoomCards article > div > a { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.lukaRoomCards article > div > a span { margin-left: 20px; }
-.lukaChannels { background: var(--paper); display: grid; gap: 8vw; grid-template-columns: .85fr 1.15fr; padding: 120px 7vw; }
-.lukaChannels h2 { font: clamp(52px, 6vw, 88px)/.92 Georgia, serif; letter-spacing: -.055em; margin: 25px 0 0; }
-.lukaChannels > div:last-child { border-top: 1px solid #afa99d; }
-.lukaChannels > div:last-child a { align-items: center; border-bottom: 1px solid #afa99d; display: grid; gap: 24px; grid-template-columns: 1fr 1.4fr auto; padding: 25px 0; text-decoration: none; }
-.lukaChannels b { font: 23px Georgia, serif; font-weight: 400; }
-.lukaChannels span { color: #6b706c; font-size: 12px; }
-.lukaChannels i { color: var(--copper); font-size: 9px; font-style: normal; letter-spacing: .12em; }
-
-/* Separate room pages */
-.lukaRoomHero { background: var(--paper); display: grid; grid-template-columns: 1.15fr .85fr; min-height: 690px; }
+/* Room pages */
+.lukaRoomHero { background: var(--card); display: grid; grid-template-columns: 1.08fr .92fr; min-height: 610px; }
 .lukaRoomHeroImage img { height: 100%; object-fit: cover; width: 100%; }
-.lukaRoomHeroCopy { align-self: center; padding: 80px 7vw; }
-.lukaBreadcrumbs { display: flex; flex-wrap: wrap; font-size: 9px; gap: 8px; letter-spacing: .08em; margin-bottom: 80px; text-transform: uppercase; }
-.lukaBreadcrumbs a { color: #777d79; text-decoration: none; }
-.lukaBreadcrumbs b { font-weight: 700; }
-.lukaRoomHero h1 { font: clamp(65px, 7.6vw, 118px)/.82 Georgia, serif; letter-spacing: -.065em; margin: 24px 0 34px; }
-.lukaRoomHeroCopy > p:not(.lukaKicker) { font: 18px/1.65 Georgia, serif; max-width: 570px; }
-.lukaRoomHeroCopy .lukaPrimary { margin-top: 30px; }
-.lukaRoomFacts { background: var(--pine-dark); color: white; display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 5vw; }
-.lukaRoomFacts > div { border-left: 1px solid rgba(255,255,255,.14); display: flex; flex-direction: column; min-height: 132px; justify-content: center; padding: 24px 34px; }
+.lukaRoomHeroCopy { align-self: center; max-width: 600px; padding: 56px 7vw; }
+.lukaBreadcrumbs { color: var(--muted); display: flex; flex-wrap: wrap; font-size: 9px; gap: 8px; margin-bottom: 56px; }
+.lukaBreadcrumbs a { text-decoration: none; }
+.lukaRoomHero h1 { font: clamp(44px, 5vw, 68px)/.98 Georgia, serif; letter-spacing: -.05em; margin: 14px 0 20px; }
+.lukaRoomHeroCopy > p:not(.lukaKicker) { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 26px; max-width: 470px; }
+.lukaRoomFacts { background: var(--pine-deep); color: white; display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 max(24px, calc((100vw - 1180px) / 2)); }
+.lukaRoomFacts > div { border-left: 1px solid rgba(255,255,255,.14); min-height: 96px; padding: 24px; }
 .lukaRoomFacts > div:last-child { border-right: 1px solid rgba(255,255,255,.14); }
-.lukaRoomFacts span { color: #90a49b; font-size: 8px; letter-spacing: .17em; margin-bottom: 13px; }
-.lukaRoomFacts b { font: 22px Georgia, serif; font-weight: 400; }
-.lukaRoomStory { display: grid; gap: 10vw; grid-template-columns: 1fr .8fr; padding: 125px 7vw; }
-.lukaRoomStory h2, .lukaRoomAmenities h2, .lukaRoomBooking h2 { font: clamp(52px, 6vw, 90px)/.92 Georgia, serif; letter-spacing: -.055em; margin: 25px 0 0; }
-.lukaRoomStoryCopy { align-self: end; }
-.lukaRoomStoryCopy > p { font: 21px/1.65 Georgia, serif; }
-.lukaRoomStoryCopy > div { border-top: 1px solid #b5b0a5; margin-top: 42px; padding-top: 22px; }
-.lukaRoomStoryCopy span { display: block; font-size: 8px; letter-spacing: .16em; margin-bottom: 12px; }
-.lukaRoomStoryCopy b { font: 17px/1.5 Georgia, serif; font-weight: 400; }
-.lukaRoomGallery { background: var(--pine); display: grid; gap: 8px; grid-template-columns: 1.2fr .8fr; grid-template-rows: 360px 360px 420px; padding: 8px; }
+.lukaRoomFacts span { color: #aebbb5; display: block; font-size: 8px; letter-spacing: .14em; margin-bottom: 9px; text-transform: uppercase; }
+.lukaRoomFacts b { font: 18px Georgia, serif; font-weight: 400; }
+.lukaRoomStory, .lukaRoomAmenities, .lukaRoomBooking { display: grid; gap: 8vw; grid-template-columns: 1fr 1fr; margin: 0 auto; max-width: 1180px; padding: 84px 24px; }
+.lukaRoomStory h2, .lukaRoomAmenities h2, .lukaRoomBooking h2 { margin-bottom: 0; }
+.lukaRoomStoryCopy > p { font: 18px/1.6 Georgia, serif; }
+.lukaRoomStoryCopy > div { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 20px; }
+.lukaRoomStoryCopy span { color: var(--muted); display: block; font-size: 8px; letter-spacing: .14em; margin-bottom: 8px; text-transform: uppercase; }
+.lukaRoomStoryCopy b { font-size: 12px; line-height: 1.6; }
+.lukaRoomGallery { background: var(--pine); display: grid; gap: 6px; grid-template-columns: 1.4fr .8fr .8fr; grid-template-rows: 260px 260px; padding: 6px; }
 .lukaRoomGallery figure { margin: 0; overflow: hidden; position: relative; }
 .lukaRoomGallery figure.isLarge { grid-row: span 2; }
 .lukaRoomGallery figure:last-child { grid-column: span 2; }
-.lukaRoomGallery img { height: 100%; object-fit: cover; transition: transform .6s; width: 100%; }
-.lukaRoomGallery figure:hover img { transform: scale(1.025); }
-.lukaRoomGallery figcaption { background: rgba(14,41,34,.9); bottom: 0; color: white; font-size: 9px; left: 0; padding: 12px 14px; position: absolute; }
-.lukaRoomAmenities { display: grid; gap: 9vw; grid-template-columns: 1fr .85fr; padding: 125px 7vw; }
-.lukaRoomAmenities ul { list-style: none; margin: 0; padding: 0; }
-.lukaRoomAmenities li { align-items: center; border-top: 1px solid #bbb5aa; display: flex; font: 18px Georgia, serif; gap: 24px; padding: 19px 0; }
-.lukaRoomAmenities li span { color: #8a867f; font: 8px Arial, sans-serif; }
-.lukaRoomBooking { background: var(--sand); display: grid; gap: 8vw; grid-template-columns: .75fr 1.25fr; padding: 120px 7vw; }
-.lukaRoomBookingHead > p:last-child { font-size: 13px; line-height: 1.65; margin-top: 32px; max-width: 500px; }
-.lukaNextRoom { align-items: center; background: var(--copper); color: white; display: flex; justify-content: space-between; padding: 55px 7vw; }
-.lukaNextRoom > span { font-size: 8px; letter-spacing: .18em; }
-.lukaNextRoom a { font: clamp(32px, 4vw, 58px) Georgia, serif; text-decoration: none; }
-.lukaNextRoom a i { font-style: normal; margin-left: 30px; }
+.lukaRoomGallery img { height: 100%; object-fit: cover; width: 100%; }
+.lukaRoomGallery figcaption { background: rgba(16,40,33,.86); bottom: 0; color: white; font-size: 8px; padding: 9px 11px; position: absolute; }
+.lukaRoomAmenities ul { display: grid; grid-template-columns: repeat(2, 1fr); list-style: none; margin: 0; padding: 0; }
+.lukaRoomAmenities li { border-top: 1px solid var(--line); font-size: 12px; line-height: 1.4; padding: 15px 8px 15px 0; }
+.lukaRoomAmenities li span { color: var(--copper); display: inline-block; font-size: 8px; margin-right: 12px; }
+.lukaRoomBooking { align-items: start; background: #eee9df; max-width: none; padding-left: max(24px, calc((100vw - 1180px) / 2)); padding-right: max(24px, calc((100vw - 1180px) / 2)); }
+.lukaRoomBookingHead > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.65; max-width: 470px; }
+.lukaNextRoom { align-items: center; background: var(--pine); color: white; display: flex; justify-content: space-between; padding: 34px max(24px, calc((100vw - 1180px) / 2)); }
+.lukaNextRoom > span { color: #b6c2bc; font-size: 8px; letter-spacing: .14em; }
+.lukaNextRoom a { font: 23px Georgia, serif; text-decoration: none; }
+.lukaNextRoom i { color: #e4a07a; font-style: normal; margin-left: 15px; }
 
-/* React booking widget */
-.lukaBookingWidget { background: #fffdf8; box-shadow: 0 28px 80px rgba(38,35,29,.13); padding: 34px; }
-.lukaBookingFields { display: grid; grid-template-columns: repeat(2, 1fr); }
-.lukaBookingFields label { border: 1px solid #d5d0c5; display: flex; flex-direction: column; margin: 0 -1px -1px 0; padding: 17px; }
-.lukaBookingFields label > span { color: #777a75; font-size: 8px; font-weight: 700; letter-spacing: .15em; margin-bottom: 9px; }
-.lukaBookingFields input, .lukaBookingFields select { appearance: none; background: transparent; border: 0; color: var(--ink); font: 17px Georgia, serif; min-height: 26px; outline: 0; width: 100%; }
-.lukaBookingFields input:focus, .lukaBookingFields select:focus { box-shadow: inset 0 -2px var(--copper); }
-.lukaBookingError { background: #fff0eb; color: #a13d25; font-size: 11px; margin: 14px 0 0; padding: 11px; }
-.lukaBookingChannels { display: grid; gap: 9px; margin-top: 24px; }
-.lukaBookingChannels > a { align-items: center; border: 1px solid #d5d0c5; display: grid; gap: 15px; grid-template-columns: 42px 1fr auto; padding: 14px; text-decoration: none; transition: border-color .2s, transform .2s; }
-.lukaBookingChannels > a:hover { border-color: var(--copper); transform: translateX(3px); }
-.lukaBookingChannels > a.isDisabled { opacity: .45; pointer-events: none; }
-.lukaChannelMark { border-radius: 50%; color: white; display: grid; font-size: 10px; font-weight: 700; height: 36px; place-items: center; width: 36px; }
-.lukaChannelMark.wa { background: #209d62; }
-.lukaChannelMark.booking { background: #083b85; }
-.lukaChannelMark.airbnb { background: #ed5a64; }
-.lukaBookingChannels b { display: block; font: 17px Georgia, serif; font-weight: 400; }
-.lukaBookingChannels small { color: #777a75; display: block; font-size: 9px; margin-top: 4px; }
-.lukaBookingChannels i { color: var(--copper); font-size: 13px; font-style: normal; }
-.lukaBookingHelp { border-top: 1px solid #d5d0c5; display: flex; flex-wrap: wrap; gap: 7px 16px; margin-top: 24px; padding-top: 20px; }
-.lukaBookingHelp span { font-size: 10px; }
-.lukaBookingHelp > a { font: 16px Georgia, serif; }
-.lukaBookingHelp small { color: #777a75; flex-basis: 100%; font-size: 9px; line-height: 1.45; }
-
-/* Dedicated booking page */
-.lukaBookHero { background: var(--pine-dark); color: white; display: grid; grid-template-columns: 1.1fr .9fr; min-height: 640px; }
-.lukaBookHero > div { align-self: center; padding: 90px 7vw; }
-.lukaBookHero h1 { font: clamp(70px, 8vw, 125px)/.82 Georgia, serif; letter-spacing: -.065em; margin: 26px 0 36px; }
-.lukaBookHero h1 em { color: var(--peach); }
-.lukaBookHero > div > p:not(.lukaKicker) { color: #c2cdc8; font: 18px/1.65 Georgia, serif; max-width: 630px; }
+/* Booking page */
+.lukaBookHero { background: var(--card); display: grid; grid-template-columns: 1fr 1fr; min-height: 570px; }
+.lukaBookHero > div { align-self: center; padding: 60px max(40px, calc((100vw - 1180px) / 2)); padding-right: 7vw; }
+.lukaBookHero h1 { font: clamp(46px, 5.5vw, 72px)/.98 Georgia, serif; letter-spacing: -.05em; margin: 15px 0 22px; }
+.lukaBookHero > div > p:not(.lukaKicker) { color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 500px; }
 .lukaBookHero > img { height: 100%; object-fit: cover; width: 100%; }
-.lukaBookTrust { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
-.lukaBookTrust span { border: 1px solid rgba(255,255,255,.24); font-size: 8px; letter-spacing: .1em; padding: 11px 13px; text-transform: uppercase; }
-.lukaBookTrust b { font: 17px Georgia, serif; margin-right: 5px; }
-.lukaBookFormSection { display: grid; gap: 8vw; grid-template-columns: .7fr 1.3fr; padding: 120px 7vw; }
-.lukaBookFormIntro h2 { font: clamp(48px, 5vw, 76px)/.92 Georgia, serif; letter-spacing: -.05em; margin: 25px 0; }
-.lukaBookFormIntro > p:last-child { color: #616762; font-size: 13px; line-height: 1.7; }
-.lukaBookingSteps { background: var(--pine); color: white; display: grid; grid-template-columns: repeat(3,1fr); padding: 0 7vw; }
-.lukaBookingSteps article { border-left: 1px solid rgba(255,255,255,.17); min-height: 320px; padding: 55px 45px; }
-.lukaBookingSteps article:last-child { border-right: 1px solid rgba(255,255,255,.17); }
-.lukaBookingSteps span { color: #91a49c; font-size: 9px; }
-.lukaBookingSteps h2 { font: 30px Georgia, serif; font-weight: 400; margin: 75px 0 15px; }
-.lukaBookingSteps p { color: #bbc8c2; font-size: 12px; line-height: 1.6; }
-.lukaDirectContact { align-items: center; display: grid; gap: 8vw; grid-template-columns: 1fr 1fr; padding: 105px 7vw; }
-.lukaDirectContact h2 { font: clamp(48px, 5vw, 74px)/.92 Georgia, serif; letter-spacing: -.05em; margin: 22px 0; }
-.lukaDirectContact > div:first-child > p:last-child { color: #656a66; font-size: 12px; line-height: 1.6; max-width: 550px; }
-.lukaDirectContact > div:last-child { border-top: 1px solid #bcb6ab; }
-.lukaDirectContact > div:last-child a { display: flex; font: 22px Georgia, serif; justify-content: space-between; padding: 23px 0; text-decoration: none; border-bottom: 1px solid #bcb6ab; }
+.lukaBookTrust { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+.lukaBookTrust span { font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+.lukaBookTrust b { font: 19px Georgia, serif; font-weight: 400; margin-right: 5px; }
+.lukaBookFormSection { display: grid; gap: 7vw; grid-template-columns: .75fr 1.25fr; margin: 0 auto; max-width: 1180px; padding: 82px 24px; }
+.lukaBookFormIntro h2, .lukaDirectContact h2 { font: 36px/1.1 Georgia, serif; letter-spacing: -.04em; margin: 14px 0 18px; }
+.lukaBookFormIntro > p:last-child, .lukaDirectContact > div > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.65; }
+.lukaBookingSteps { background: var(--pine); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 max(24px, calc((100vw - 1180px) / 2)); }
+.lukaBookingSteps article { border-left: 1px solid rgba(255,255,255,.15); min-height: 220px; padding: 34px; }
+.lukaBookingSteps article:last-child { border-right: 1px solid rgba(255,255,255,.15); }
+.lukaBookingSteps article > span { color: #d69a78; font-size: 9px; }
+.lukaBookingSteps h2 { font: 22px/1.2 Georgia, serif; font-weight: 400; margin: 38px 0 12px; }
+.lukaBookingSteps p { color: #c4cec9; font-size: 12px; line-height: 1.6; }
+.lukaDirectContact { align-items: center; display: grid; gap: 7vw; grid-template-columns: 1fr 1fr; margin: 0 auto; max-width: 1180px; padding: 76px 24px; }
+.lukaDirectContact > div:last-child { display: grid; gap: 10px; }
+.lukaDirectContact > div:last-child a { align-items: center; border: 1px solid var(--line); display: flex; font-size: 11px; font-weight: 700; justify-content: space-between; padding: 18px; text-decoration: none; }
 
-@media (max-width: 1050px) {
+@media (max-width: 980px) {
   .lukaNavLinks { display: none; }
-  .lukaHeroProperty { right: 3vw; }
-  .lukaStory { gap: 4vw; grid-template-columns: 1fr .85fr; }
-  .lukaStoryCopy { grid-column: 1 / -1; max-width: 620px; }
-  .lukaExperiencePhoto { min-height: 720px; }
-  .lukaTrust { grid-template-columns: repeat(4,1fr); }
-  .lukaTrust > p { display: none; }
+  .lukaQuickBooking { grid-template-columns: 1fr; gap: 24px; }
+  .lukaBookingFields { grid-template-columns: repeat(2, 1fr); }
+  .lukaBookingChannels { grid-template-columns: 1fr; }
+  .lukaAbout, .lukaLocation { gap: 48px; }
+  .lukaExperienceCopy { padding-left: 36px; padding-right: 36px; }
+  .lukaRoomHero { grid-template-columns: 1fr; }
+  .lukaRoomHeroImage { height: 55vw; min-height: 400px; }
+  .lukaRoomHeroCopy { max-width: none; padding: 56px 36px 64px; }
+  .lukaBreadcrumbs { margin-bottom: 34px; }
+  .lukaRoomStory, .lukaRoomAmenities, .lukaRoomBooking, .lukaBookFormSection { gap: 48px; }
 }
 
 @media (max-width: 720px) {
-  .luka { padding-bottom: 62px; }
-  .lukaNav { height: 74px; padding: 0 20px; }
-  .lukaBrand span { height: 30px; width: 30px; }
-  .lukaBrand b { font-size: 17px; }
-  .lukaBookLight { display: none; }
-  .lukaHero { min-height: 690px; }
-  .lukaHero > img { object-position: 48% center; }
-  .lukaHeroCopy { bottom: 92px; left: 22px; right: 22px; }
-  .lukaHeroCopy h1 { font-size: clamp(55px, 16.2vw, 76px); line-height: .84; margin: 22px 0 32px; }
-  .lukaHeroBottom { align-items: flex-start; flex-direction: column; gap: 24px; }
-  .lukaHeroBottom > p { font-size: 14px; line-height: 1.55; max-width: 440px; }
-  .lukaHeroProperty, .lukaScroll { display: none; }
-  .lukaPrimary { gap: 24px; padding: 17px 18px; }
-  .lukaTrust { grid-template-columns: repeat(2,1fr); padding: 0; }
-  .lukaTrust > div { border-bottom: 1px solid rgba(255,255,255,.14); min-height: 86px; }
-  .lukaTrust b { font-size: 30px; }
-  .lukaStory { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaStory h2, .lukaStay h2, .lukaExperience h2, .lukaReview h2, .lukaSeasons h2, .lukaLocation h2 { font-size: clamp(49px, 14vw, 69px); }
-  .lukaStoryImage { margin-top: 28px; }
-  .lukaStoryImage img { aspect-ratio: 1.1; }
-  .lukaStoryCopy { margin-top: 28px; }
-  .lukaStoryCopy .lukaLead { font-size: 19px; }
-  .lukaGallery { grid-template-columns: 1fr 1fr; grid-template-rows: 410px 250px 270px; }
-  .lukaGalleryMain { grid-column: span 2; grid-row: auto; }
-  .lukaGalleryWide { grid-column: span 2; }
-  .lukaStay { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaRoomCards { margin-top: 35px; }
-  .lukaRoomCards article { grid-template-columns: 1fr; }
-  .lukaRoomCardImage { height: 74vw; max-height: 430px; }
-  .lukaChannels { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaChannels h2 { font-size: clamp(49px, 14vw, 69px); }
-  .lukaChannels > div:last-child a { grid-template-columns: 1fr auto; }
-  .lukaChannels > div:last-child a span { grid-column: 1; grid-row: 2; }
-  .lukaChannels > div:last-child a i { grid-column: 2; grid-row: 1 / span 2; }
-  .lukaExperience { grid-template-columns: 1fr; }
-  .lukaExperiencePhoto { min-height: 500px; }
-  .lukaExperienceCopy { padding: 80px 22px 60px; }
-  .lukaReview { padding: 82px 22px; }
-  .lukaReviewGrid { grid-template-columns: repeat(2,1fr); margin-top: 48px; }
-  .lukaReviewGrid > div { border-bottom: 1px solid #beb9ae; padding: 22px; }
-  .lukaReviewGrid > div:nth-child(2) { border-right: 1px solid #beb9ae; }
-  .lukaReviewGrid > div:last-child { border-right: 1px solid #beb9ae; }
-  .lukaSeasons { grid-template-columns: 1fr; }
-  .lukaSeasons > div:first-child { height: 470px; }
-  .lukaSeasons > div:last-child { padding: 80px 22px; }
-  .lukaLocation { grid-template-columns: 1fr; padding: 82px 22px 115px; }
-  .lukaLocationVisual { margin-top: 28px; }
-  .lukaLocationVisual img { aspect-ratio: .9; }
-  .lukaLocationVisual > div { left: 4%; right: 4%; }
-  .lukaLocationVisual span { display: none; }
-  .lukaCta { min-height: 640px; }
-  .lukaCta h2 { font-size: clamp(54px, 15vw, 75px); }
-  .lukaRoomHero { grid-template-columns: 1fr; }
-  .lukaRoomHeroImage { height: 72vw; min-height: 330px; }
-  .lukaRoomHeroCopy { padding: 64px 22px 78px; }
-  .lukaBreadcrumbs { margin-bottom: 48px; }
-  .lukaRoomHero h1 { font-size: clamp(58px, 16vw, 78px); }
-  .lukaRoomFacts { grid-template-columns: repeat(2, 1fr); padding: 0; }
-  .lukaRoomFacts > div { min-height: 105px; padding: 20px; }
-  .lukaRoomFacts > div:nth-child(2) { border-right: 1px solid rgba(255,255,255,.14); }
-  .lukaRoomFacts b { font-size: 18px; }
-  .lukaRoomStory, .lukaRoomAmenities, .lukaRoomBooking { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaRoomStory h2, .lukaRoomAmenities h2, .lukaRoomBooking h2 { font-size: clamp(49px, 14vw, 69px); }
-  .lukaRoomStoryCopy { margin-top: 28px; }
-  .lukaRoomStoryCopy > p { font-size: 18px; }
-  .lukaRoomGallery { grid-template-columns: 1fr; grid-template-rows: 470px 320px 320px 350px; }
-  .lukaRoomGallery figure.isLarge { grid-row: auto; }
-  .lukaRoomGallery figure:last-child { grid-column: auto; }
-  .lukaRoomAmenities ul { margin-top: 28px; }
-  .lukaRoomBooking .lukaBookingWidget { margin-top: 28px; }
-  .lukaNextRoom { align-items: flex-start; flex-direction: column; gap: 20px; padding: 44px 22px; }
-  .lukaBookingWidget { padding: 18px; }
+  .lukaNav { height: 64px; padding: 0 18px; }
+  .lukaBrand b { font-size: 16px; }
+  .lukaBrand span { height: 27px; width: 27px; }
+  .lukaBook { padding: 9px 10px; }
+  .lukaBook span { display: none; }
+  .lukaLang { min-width: 38px; padding: 9px 6px; }
+  .lukaHero { height: 76svh; min-height: 560px; }
+  .lukaHeroCopy { bottom: 42px; left: 20px; right: 20px; }
+  .lukaHeroCopy h1 { font-size: clamp(42px, 12.5vw, 58px); margin: 15px 0 18px; }
+  .lukaHeroText { font-size: 13px; }
+  .lukaTrust { grid-template-columns: repeat(2, 1fr); padding: 0; }
+  .lukaTrust > div, .lukaTrust > div:first-child { border-bottom: 1px solid rgba(255,255,255,.13); border-left: 1px solid rgba(255,255,255,.13); min-height: 74px; padding: 0 16px; }
+  .lukaTrust b { font-size: 22px; }
+  .lukaQuickBooking { padding: 50px 20px 56px; }
+  .lukaBookingWidget { padding: 16px; }
   .lukaBookingFields { grid-template-columns: 1fr; }
-  .lukaBookingChannels > a { grid-template-columns: 38px 1fr auto; }
-  .lukaBookHero { grid-template-columns: 1fr; }
-  .lukaBookHero > div { padding: 75px 22px; }
-  .lukaBookHero h1 { font-size: clamp(60px, 16vw, 80px); }
-  .lukaBookHero > img { height: 78vw; max-height: 510px; }
-  .lukaBookFormSection { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaBookingSteps { grid-template-columns: 1fr; padding: 0; }
-  .lukaBookingSteps article { border-bottom: 1px solid rgba(255,255,255,.17); border-left: 0; min-height: 230px; padding: 40px 22px; }
-  .lukaBookingSteps h2 { margin-top: 45px; }
-  .lukaDirectContact { grid-template-columns: 1fr; padding: 82px 22px; }
-  .lukaDirectContact > div:last-child { margin-top: 25px; }
-  .lukaFooter { align-items: flex-start; flex-direction: column; gap: 22px; padding: 32px 22px; }
+  .lukaAbout, .lukaLocation { grid-template-columns: 1fr; padding: 60px 20px; }
+  .lukaAbout { gap: 36px; }
+  .lukaAboutImage img { aspect-ratio: 1.1; }
+  .lukaAboutCopy h2, .lukaSectionHead h2, .lukaExperience h2, .lukaLocation h2, .lukaCta h2, .lukaRoomStory h2, .lukaRoomAmenities h2, .lukaRoomBooking h2 { font-size: clamp(34px, 10vw, 46px); }
+  .lukaRooms { padding: 60px 20px; }
+  .lukaSectionHead { display: block; margin-bottom: 28px; }
+  .lukaSectionHead > p { margin-top: 18px; }
+  .lukaRoomCards { grid-template-columns: 1fr; }
+  .lukaRoomCardCopy { padding: 20px; }
+  .lukaExperience { grid-template-columns: 1fr; }
+  .lukaExperienceCopy { padding: 60px 20px; }
+  .lukaExperience > img { min-height: 330px; }
+  .lukaLocation { gap: 34px; }
+  .lukaLocation > img { aspect-ratio: 1.1; }
+  .lukaCta { min-height: 390px; }
+  .lukaFooter { align-items: flex-start; flex-direction: column; gap: 18px; padding: 28px 20px 88px; }
   .lukaFooter p { text-align: left; }
-  .lukaMobileBook { align-items: center; background: var(--copper); bottom: 0; color: white; display: flex; font-size: 10px; font-weight: 700; gap: 20px; height: 62px; justify-content: center; left: 0; letter-spacing: .13em; position: fixed; right: 0; text-decoration: none; text-transform: uppercase; z-index: 50; }
+  .lukaMobileBook { align-items: center; background: var(--copper); bottom: 0; color: white; display: flex; font-size: 10px; font-weight: 700; gap: 16px; height: 58px; justify-content: center; left: 0; letter-spacing: .1em; position: fixed; right: 0; text-decoration: none; text-transform: uppercase; z-index: 50; }
+  .lukaRoomHeroImage { height: 72vw; min-height: 330px; }
+  .lukaRoomHeroCopy { padding: 48px 20px 58px; }
+  .lukaRoomHero h1 { font-size: clamp(40px, 12vw, 58px); }
+  .lukaRoomFacts { grid-template-columns: repeat(2, 1fr); padding: 0; }
+  .lukaRoomFacts > div { min-height: 90px; padding: 19px; }
+  .lukaRoomStory, .lukaRoomAmenities, .lukaRoomBooking { grid-template-columns: 1fr; gap: 30px; padding: 60px 20px; }
+  .lukaRoomStoryCopy > p { font-size: 16px; }
+  .lukaRoomGallery { grid-template-columns: 1fr 1fr; grid-template-rows: 330px 210px 230px; }
+  .lukaRoomGallery figure.isLarge { grid-column: span 2; grid-row: auto; }
+  .lukaRoomGallery figure:last-child { grid-column: span 2; }
+  .lukaRoomAmenities ul { grid-template-columns: 1fr; }
+  .lukaNextRoom { align-items: flex-start; flex-direction: column; gap: 14px; padding: 30px 20px; }
+  .lukaNextRoom a { font-size: 20px; }
+  .lukaBookHero { grid-template-columns: 1fr; }
+  .lukaBookHero > div { padding: 54px 20px 60px; }
+  .lukaBookHero h1 { font-size: clamp(43px, 12vw, 59px); }
+  .lukaBookHero > img { height: 76vw; max-height: 480px; }
+  .lukaBookFormSection { grid-template-columns: 1fr; gap: 30px; padding: 60px 20px; }
+  .lukaBookingSteps { grid-template-columns: 1fr; padding: 0; }
+  .lukaBookingSteps article { border-bottom: 1px solid rgba(255,255,255,.15); border-left: 0; min-height: 190px; padding: 30px 20px; }
+  .lukaBookingSteps h2 { margin-top: 30px; }
+  .lukaDirectContact { grid-template-columns: 1fr; gap: 26px; padding: 60px 20px; }
 }

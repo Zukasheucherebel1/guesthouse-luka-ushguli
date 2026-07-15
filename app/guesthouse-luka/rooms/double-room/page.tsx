@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function DoubleRoomPage() {
-  return <RoomDetail room={rooms.double} />;
+  return <RoomDetail room={rooms.double} lang="en" />;
 }

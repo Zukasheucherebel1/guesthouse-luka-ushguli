@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function BudgetTripleRoomPage() {
-  return <RoomDetail room={rooms.triple} />;
+  return <RoomDetail room={rooms.triple} lang="en" />;
 }

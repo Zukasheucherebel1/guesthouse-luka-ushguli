@@ -18,6 +18,10 @@ const routes = [
   "/guesthouse-luka/book",
   "/guesthouse-luka/rooms/double-room",
   "/guesthouse-luka/rooms/budget-triple-room",
+  "/guesthouse-luka/ka",
+  "/guesthouse-luka/ka/book",
+  "/guesthouse-luka/ka/rooms/double-room",
+  "/guesthouse-luka/ka/rooms/budget-triple-room",
 ];
 
 for (const route of routes) {
@@ -38,4 +42,22 @@ test("booking page exposes every verified booking channel", async () => {
   assert.match(html, /booking\.com\/hotel\/ge\/guesthouse-luka-ushguli/i);
   assert.match(html, /airbnb\.com\/rooms\/1089191074728130751/i);
   assert.equal((html.match(/type="date"/g) ?? []).length, 2);
+});
+
+test("Georgian version is fully server-rendered and links to its booking flow", async () => {
+  const response = await render("/guesthouse-luka/ka");
+  const html = await response.text();
+  assert.match(html, /lang="ka"/i);
+  assert.match(html, /დარჩით სვანურ/);
+  assert.match(html, /href="\/guesthouse-luka\/ka\/book"/i);
+  assert.match(html, /href="\/guesthouse-luka"[^>]*lang="en"/i);
+});
+
+test("Georgian booking page exposes every verified booking channel", async () => {
+  const response = await render("/guesthouse-luka/ka/book");
+  const html = await response.text();
+  assert.match(html, /wa\.me\/995555368020/i);
+  assert.match(html, /booking\.com\/hotel\/ge\/guesthouse-luka-ushguli/i);
+  assert.match(html, /airbnb\.com\/rooms\/1089191074728130751/i);
+  assert.match(html, /დაგეგმეთ ვიზიტი/);
 });
