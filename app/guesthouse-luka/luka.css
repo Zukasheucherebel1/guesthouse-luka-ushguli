@@ -1,1 +1,212 @@
-.luka{--forest:#17362d;--cream:#f3efe5;--rust:#b85335;background:var(--cream);color:#1c2723;font-family:Arial,sans-serif}.luka a{color:inherit}.lukaNav{height:84px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;position:absolute;z-index:5;width:100%;color:white;border-bottom:1px solid #ffffff55}.lukaBrand{font:22px Georgia;text-decoration:none}.lukaBrand b{font-weight:400;font-style:italic}.lukaNav div{display:flex;gap:28px}.lukaNav div a{text-decoration:none;font-size:13px}.lukaBook{font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border:1px solid white;padding:13px 18px}.lukaHero{height:100vh;min-height:720px;position:relative;color:white;overflow:hidden}.lukaHero>img{position:absolute;width:100%;height:100%;object-fit:cover}.lukaHeroShade{position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,#09241dbb 0%,#09241d22 70%),linear-gradient(0deg,#09241d99,transparent 55%)}.lukaHeroCopy{position:absolute;z-index:2;left:5vw;right:5vw;bottom:8vh}.lukaHeroCopy>p,.lukaKicker,.lukaCta>p{font-size:11px;letter-spacing:.22em;font-weight:700}.lukaHeroCopy h1{font:clamp(75px,11vw,165px)/.76 Georgia;margin:40px 0 55px;letter-spacing:-.06em}.lukaHeroCopy h1 em,.lukaIntro h2 em,.lukaCta h2 em{font-weight:400;color:#efb28f}.lukaHeroCopy>div{display:flex;align-items:end;justify-content:space-between}.lukaHeroCopy>div span{max-width:470px;line-height:1.6}.lukaHeroCopy>div a{font-size:13px}.lukaHero aside{position:absolute;z-index:3;right:0;bottom:0;background:var(--rust);padding:26px 45px;display:flex;gap:15px;align-items:center}.lukaHero aside b{font:38px Georgia}.lukaHero aside span{font-size:11px;line-height:1.4}.lukaIntro{padding:120px 7vw;display:grid;grid-template-columns:.45fr 1.1fr 1fr;gap:5vw}.lukaIntro h2,.lukaSectionHead h2,.lukaExpCopy h2,.lukaLocation h2,.lukaCta h2{font:clamp(48px,7vw,96px)/.92 Georgia;letter-spacing:-.04em;margin:25px 0}.lukaIntroCopy{padding-top:90px;font:19px/1.65 Georgia}.lukaRooms{background:var(--forest);color:white;padding:110px 5vw}.lukaSectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:60px}.lukaSectionHead>p{max-width:390px;line-height:1.6;color:#c9d1cc}.lukaSectionHead h2{font-size:clamp(48px,6vw,78px)}.lukaRoomGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.lukaRoomGrid article>div{height:440px;position:relative;overflow:hidden}.lukaRoomGrid img{width:100%;height:100%;object-fit:cover;transition:.5s}.lukaRoomGrid article:hover img{transform:scale(1.03)}.lukaRoomGrid article span{position:absolute;top:15px;left:15px;background:#ffffffdd;color:#111;padding:8px;font-size:11px}.lukaRoomGrid h3{font:27px Georgia;margin:22px 0 5px}.lukaRoomGrid p{color:#b9c5bf;font-size:13px}.lukaExperience{display:grid;grid-template-columns:1.15fr 1fr;min-height:750px}.lukaExpImage img{width:100%;height:100%;object-fit:cover}.lukaExpCopy{padding:100px 7vw;background:#dfd3bd}.lukaExpCopy h2{font-size:clamp(46px,5.2vw,72px)}.lukaExpCopy ul{padding:20px 0 0;list-style:none}.lukaExpCopy li{border-top:1px solid #9f9684;padding:20px 0;font:18px Georgia}.lukaExpCopy li span{font:10px Arial;margin-right:20px;color:#706958}.lukaLocation{padding:120px 7vw;display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}.lukaLocation>div>p:not(.lukaKicker){font:18px/1.7 Georgia;margin:35px 0}.lukaLocation>div>a{font-size:13px;text-transform:uppercase;letter-spacing:.1em}.lukaMap{height:480px;background:#d5c8af;position:relative;display:grid;place-items:center;border-radius:50% 50% 44% 56%}.lukaMap:before,.lukaMap:after{content:"";position:absolute;border:1px solid #9f927b;border-radius:50%;inset:18%}.lukaMap:after{inset:34% 15%}.lukaMap b{z-index:1;font:40px Georgia}.lukaMap span,.lukaMap i{position:absolute;font-size:11px}.lukaMap span{top:10%}.lukaMap i{bottom:10%}.lukaCta{background:var(--rust);color:white;text-align:center;padding:130px 5vw 35px}.lukaCta h2{font-size:clamp(60px,9vw,130px)}.lukaCta a{display:inline-block;margin:30px 0 100px;border-bottom:1px solid white;padding-bottom:6px}.lukaCta>div{border-top:1px solid #ffffff66;padding-top:24px;display:flex;justify-content:space-between;font-size:12px}.lukaFooter{background:#0e211b;color:white;padding:28px 5vw;display:flex;justify-content:space-between;font-size:12px}.lukaFooter b{font:20px Georgia}@media(max-width:760px){.lukaNav div{display:none}.lukaBook{padding:10px;font-size:10px}.lukaHero{min-height:660px}.lukaHeroCopy h1{font-size:70px}.lukaHeroCopy>div{align-items:flex-start;gap:25px;flex-direction:column}.lukaHero aside{padding:18px 25px}.lukaIntro,.lukaExperience,.lukaLocation{grid-template-columns:1fr}.lukaIntro{padding:80px 7vw}.lukaIntroCopy{padding-top:0}.lukaSectionHead{align-items:flex-start;flex-direction:column}.lukaRoomGrid{grid-template-columns:1fr}.lukaRoomGrid article>div{height:115vw}.lukaExpImage{height:100vw}.lukaMap{height:90vw}.lukaCta>div,.lukaFooter{gap:12px;align-items:center;flex-direction:column}}
+.luka {
+  --ink: #17201b;
+  --pine: #173c32;
+  --pine-dark: #0e2922;
+  --paper: #f2eee3;
+  --sand: #d8c9ae;
+  --copper: #bc5838;
+  --peach: #edb08e;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.luka *, .luka *::before, .luka *::after { box-sizing: border-box; }
+.luka img { display: block; max-width: 100%; }
+.luka a { color: inherit; }
+.luka em { color: var(--copper); font-weight: 400; }
+
+.lukaNav {
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  color: white;
+  display: flex;
+  height: 92px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 4vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.lukaBrand { align-items: center; display: flex; gap: 12px; text-decoration: none; }
+.lukaBrand span { border: 1px solid rgba(255,255,255,.75); display: grid; font: 12px Georgia, serif; height: 36px; place-items: center; width: 36px; }
+.lukaBrand b { font: 21px Georgia, serif; font-weight: 400; }
+.lukaNavLinks { display: flex; gap: 30px; }
+.lukaNavLinks a { font-size: 11px; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.lukaBook { align-items: center; display: inline-flex; font-size: 10px; font-weight: 700; gap: 22px; letter-spacing: .11em; padding: 14px 17px; text-decoration: none; text-transform: uppercase; }
+.lukaBookLight { border: 1px solid rgba(255,255,255,.8); }
+
+.lukaHero { color: white; height: 100svh; min-height: 760px; overflow: hidden; position: relative; }
+.lukaHero > img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
+.lukaHeroShade { background: linear-gradient(90deg, rgba(6,25,20,.83) 0%, rgba(6,25,20,.36) 52%, rgba(6,25,20,.08) 80%), linear-gradient(0deg, rgba(5,24,19,.8), transparent 55%); inset: 0; position: absolute; }
+.lukaHeroCopy { bottom: 10vh; left: 5vw; max-width: 1000px; position: absolute; z-index: 2; }
+.lukaEyebrow, .lukaKicker { font-size: 10px; font-weight: 700; letter-spacing: .22em; line-height: 1.5; text-transform: uppercase; }
+.lukaHeroCopy h1 { font: clamp(68px, 9.2vw, 142px)/.8 Georgia, serif; letter-spacing: -.065em; margin: 28px 0 48px; }
+.lukaHeroCopy h1 em { color: var(--peach); }
+.lukaHeroBottom { align-items: center; display: flex; gap: 80px; }
+.lukaHeroBottom > p { font: 17px/1.65 Georgia, serif; margin: 0; max-width: 530px; }
+.lukaPrimary { align-items: center; background: var(--copper); color: white !important; display: inline-flex; flex-shrink: 0; font-size: 11px; font-weight: 700; gap: 34px; letter-spacing: .09em; padding: 20px 23px; text-decoration: none; text-transform: uppercase; transition: background .25s, transform .25s; }
+.lukaPrimary:hover { background: #a5452b; transform: translateY(-2px); }
+.lukaHeroProperty { background: var(--paper); bottom: 0; color: var(--ink); display: grid; grid-template-columns: 148px 190px; position: absolute; right: 4vw; z-index: 3; }
+.lukaHeroProperty img { height: 118px; object-fit: cover; width: 148px; }
+.lukaHeroProperty div { display: flex; flex-direction: column; justify-content: center; padding: 20px; }
+.lukaHeroProperty span { font-size: 8px; letter-spacing: .17em; margin-bottom: 10px; }
+.lukaHeroProperty b { font: 16px/1.2 Georgia, serif; font-weight: 400; }
+.lukaScroll { align-items: center; bottom: auto; display: flex; font-size: 8px; gap: 13px; left: auto; letter-spacing: .18em; position: absolute; right: 1.8vw; top: 132px; writing-mode: vertical-rl; z-index: 3; }
+.lukaScroll i { font-style: normal; }
+
+.lukaTrust { align-items: stretch; background: var(--pine-dark); color: white; display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); padding: 0 5vw; }
+.lukaTrust > p { align-items: center; display: flex; font-size: 9px; font-weight: 700; letter-spacing: .2em; margin: 0; }
+.lukaTrust > div { align-items: center; border-left: 1px solid rgba(255,255,255,.14); display: flex; gap: 12px; justify-content: center; min-height: 112px; }
+.lukaTrust b { font: 36px Georgia, serif; font-weight: 400; }
+.lukaTrust span { color: #b7c4be; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+
+.lukaStory { display: grid; gap: 5vw; grid-template-columns: 1.05fr .8fr .65fr; padding: 130px 6vw; }
+.lukaStory h2, .lukaStay h2, .lukaExperience h2, .lukaReview h2, .lukaSeasons h2, .lukaLocation h2, .lukaCta h2 { font: clamp(52px, 6.5vw, 100px)/.91 Georgia, serif; letter-spacing: -.055em; margin: 26px 0 0; }
+.lukaStoryImage { align-self: end; position: relative; }
+.lukaStoryImage img { aspect-ratio: .82; object-fit: cover; width: 100%; }
+.lukaStoryImage span, .lukaExperiencePhoto span { background: var(--paper); bottom: 0; font-size: 8px; letter-spacing: .18em; padding: 13px 16px; position: absolute; right: 0; }
+.lukaStoryCopy { align-self: end; padding-bottom: 4px; }
+.lukaStoryCopy p { font-size: 14px; line-height: 1.75; }
+.lukaStoryCopy .lukaLead { font: 22px/1.55 Georgia, serif; }
+.lukaStoryCopy a { display: inline-flex; font-size: 10px; font-weight: 700; gap: 30px; letter-spacing: .13em; margin-top: 25px; text-transform: uppercase; }
+
+.lukaGallery { background: var(--pine); display: grid; gap: 8px; grid-template-columns: 1.45fr .7fr .7fr; grid-template-rows: 330px 330px; padding: 8px; }
+.lukaGallery figure { margin: 0; overflow: hidden; position: relative; }
+.lukaGallery figure img { height: 100%; object-fit: cover; transition: transform .6s; width: 100%; }
+.lukaGallery figure:hover img { transform: scale(1.025); }
+.lukaGallery figcaption { background: rgba(14,41,34,.88); bottom: 0; color: white; font-size: 8px; letter-spacing: .16em; padding: 13px 16px; position: absolute; }
+.lukaGalleryMain { grid-row: span 2; }
+.lukaGalleryWide { grid-column: span 2; }
+
+.lukaStay { background: var(--pine); color: white; display: grid; gap: 8vw; grid-template-columns: .9fr 1.1fr; padding: 130px 7vw; }
+.lukaStay h2 em, .lukaExperience h2 em, .lukaCta h2 em { color: var(--peach); }
+.lukaStayIntro > p:last-child { color: #c2cdc8; line-height: 1.7; margin-top: 38px; max-width: 440px; }
+.lukaRoomList article { align-items: center; border-top: 1px solid rgba(255,255,255,.25); display: grid; gap: 24px; grid-template-columns: 40px 1fr auto; padding: 28px 0; }
+.lukaRoomList article > span { color: #8ea19a; font-size: 9px; }
+.lukaRoomList h3 { font: 28px Georgia, serif; font-weight: 400; margin: 0 0 7px; }
+.lukaRoomList article p { color: #afc0b8; font-size: 12px; margin: 0; }
+.lukaRoomList article b { font-size: 9px; font-weight: 400; letter-spacing: .13em; text-transform: uppercase; }
+.lukaRoomNotes { border-bottom: 1px solid rgba(255,255,255,.25); border-top: 1px solid rgba(255,255,255,.25); display: flex; flex-wrap: wrap; gap: 9px; padding: 24px 0; }
+.lukaRoomNotes p { font-size: 9px; letter-spacing: .16em; margin: 8px 22px 0 0; }
+.lukaRoomNotes span { border: 1px solid rgba(255,255,255,.22); font-size: 9px; padding: 8px 10px; }
+.lukaPrimaryDark { margin-top: 34px; }
+
+.lukaExperience { display: grid; grid-template-columns: 1fr 1fr; }
+.lukaExperiencePhoto { min-height: 850px; position: relative; }
+.lukaExperiencePhoto img { height: 100%; object-fit: cover; width: 100%; }
+.lukaExperienceCopy { background: var(--sand); padding: 110px 7vw 80px; }
+.lukaExperienceCopy > p:nth-of-type(2) { font: 18px/1.65 Georgia, serif; max-width: 560px; }
+.lukaAmenities { margin-top: 48px; }
+.lukaAmenities article { border-top: 1px solid rgba(23,32,27,.28); display: grid; gap: 18px; grid-template-columns: 32px 1fr; padding: 19px 0; }
+.lukaAmenities article > span { color: #726b5d; font-size: 9px; margin-top: 6px; }
+.lukaAmenities h3 { font: 20px Georgia, serif; font-weight: 400; margin: 0 0 5px; }
+.lukaAmenities p { font-size: 12px; line-height: 1.5; margin: 0; }
+
+.lukaReview { padding: 125px 7vw; text-align: center; }
+.lukaReview h2 { font-size: clamp(48px, 6vw, 86px); }
+.lukaReviewGrid { display: grid; grid-template-columns: repeat(4,1fr); margin: 80px auto 0; max-width: 1100px; }
+.lukaReviewGrid > div { border-left: 1px solid #beb9ae; display: flex; flex-direction: column; padding: 10px 35px; position: relative; }
+.lukaReviewGrid > div:last-child { border-right: 1px solid #beb9ae; }
+.lukaReviewGrid b { font: 46px Georgia, serif; font-weight: 400; }
+.lukaReviewGrid span { font-size: 8px; letter-spacing: .17em; margin: 8px 0 18px; }
+.lukaReviewGrid i { background: #d1ccc1; height: 2px; overflow: hidden; position: relative; }
+.lukaReviewGrid i::after { background: var(--copper); content: ""; height: 100%; left: 0; position: absolute; width: 92%; }
+.lukaReviewNote { color: #716f69; font-size: 10px; margin-top: 28px; }
+
+.lukaSeasons { background: var(--pine-dark); color: white; display: grid; grid-template-columns: .8fr 1.2fr; min-height: 660px; }
+.lukaSeasons > div:first-child img { height: 100%; object-fit: cover; width: 100%; }
+.lukaSeasons > div:last-child { align-self: center; padding: 90px 8vw; }
+.lukaSeasons h2 { font-size: clamp(48px, 6vw, 88px); }
+.lukaSeasons h2 em { color: var(--peach); }
+.lukaSeasons > div:last-child > p:last-child { color: #bac6c1; line-height: 1.7; margin-top: 35px; max-width: 560px; }
+
+.lukaLocation { display: grid; gap: 8vw; grid-template-columns: .75fr 1.25fr; padding: 130px 7vw; }
+.lukaLocationCopy > p:not(.lukaKicker) { font: 18px Georgia, serif; margin: 32px 0 14px; }
+.lukaLocationCopy ul { color: #666b67; font-size: 12px; line-height: 2; list-style: none; padding: 0; }
+.lukaLocationCopy > a { display: inline-flex; font-size: 10px; font-weight: 700; gap: 25px; letter-spacing: .12em; margin-top: 24px; text-transform: uppercase; }
+.lukaLocationVisual { align-self: center; position: relative; }
+.lukaLocationVisual img { aspect-ratio: 1.45; object-fit: cover; width: 100%; }
+.lukaLocationVisual > div { align-items: center; background: var(--copper); bottom: -34px; color: white; display: flex; gap: 22px; justify-content: space-between; left: 8%; padding: 22px 28px; position: absolute; right: 8%; }
+.lukaLocationVisual b { font: 26px Georgia, serif; font-weight: 400; }
+.lukaLocationVisual span { font-size: 8px; letter-spacing: .12em; }
+
+.lukaCta { color: white; min-height: 720px; overflow: hidden; position: relative; }
+.lukaCta > img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
+.lukaCtaShade { background: linear-gradient(rgba(5,24,19,.58), rgba(5,24,19,.8)); inset: 0; position: absolute; }
+.lukaCta > div:last-child { align-items: center; display: flex; flex-direction: column; inset: 0; justify-content: center; padding: 70px 5vw; position: absolute; text-align: center; }
+.lukaCta h2 { font-size: clamp(68px, 8.4vw, 128px); margin-bottom: 52px; }
+.lukaCta p { font-size: 9px; font-weight: 700; letter-spacing: .22em; }
+
+.lukaFooter { align-items: center; background: #091c17; color: white; display: flex; justify-content: space-between; padding: 36px 5vw; }
+.lukaFooter > div { display: flex; flex-direction: column; gap: 6px; }
+.lukaFooter b { font: 21px Georgia, serif; font-weight: 400; }
+.lukaFooter span { color: #9eb0a8; font-size: 9px; letter-spacing: .1em; }
+.lukaFooter p { color: #84978f; font-size: 9px; line-height: 1.5; margin: 0; max-width: 580px; text-align: right; }
+.lukaMobileBook { display: none; }
+
+@media (max-width: 1050px) {
+  .lukaNavLinks { display: none; }
+  .lukaHeroProperty { right: 3vw; }
+  .lukaStory { gap: 4vw; grid-template-columns: 1fr .85fr; }
+  .lukaStoryCopy { grid-column: 1 / -1; max-width: 620px; }
+  .lukaExperiencePhoto { min-height: 720px; }
+  .lukaTrust { grid-template-columns: repeat(4,1fr); }
+  .lukaTrust > p { display: none; }
+}
+
+@media (max-width: 720px) {
+  .luka { padding-bottom: 62px; }
+  .lukaNav { height: 74px; padding: 0 20px; }
+  .lukaBrand span { height: 30px; width: 30px; }
+  .lukaBrand b { font-size: 17px; }
+  .lukaBookLight { display: none; }
+  .lukaHero { min-height: 690px; }
+  .lukaHero > img { object-position: 48% center; }
+  .lukaHeroCopy { bottom: 92px; left: 22px; right: 22px; }
+  .lukaHeroCopy h1 { font-size: clamp(55px, 16.2vw, 76px); line-height: .84; margin: 22px 0 32px; }
+  .lukaHeroBottom { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .lukaHeroBottom > p { font-size: 14px; line-height: 1.55; max-width: 440px; }
+  .lukaHeroProperty, .lukaScroll { display: none; }
+  .lukaPrimary { gap: 24px; padding: 17px 18px; }
+  .lukaTrust { grid-template-columns: repeat(2,1fr); padding: 0; }
+  .lukaTrust > div { border-bottom: 1px solid rgba(255,255,255,.14); min-height: 86px; }
+  .lukaTrust b { font-size: 30px; }
+  .lukaStory { grid-template-columns: 1fr; padding: 82px 22px; }
+  .lukaStory h2, .lukaStay h2, .lukaExperience h2, .lukaReview h2, .lukaSeasons h2, .lukaLocation h2 { font-size: clamp(49px, 14vw, 69px); }
+  .lukaStoryImage { margin-top: 28px; }
+  .lukaStoryImage img { aspect-ratio: 1.1; }
+  .lukaStoryCopy { margin-top: 28px; }
+  .lukaStoryCopy .lukaLead { font-size: 19px; }
+  .lukaGallery { grid-template-columns: 1fr 1fr; grid-template-rows: 410px 250px 270px; }
+  .lukaGalleryMain { grid-column: span 2; grid-row: auto; }
+  .lukaGalleryWide { grid-column: span 2; }
+  .lukaStay { grid-template-columns: 1fr; padding: 82px 22px; }
+  .lukaRoomList article { align-items: start; grid-template-columns: 28px 1fr; }
+  .lukaRoomList article b { grid-column: 2; }
+  .lukaExperience { grid-template-columns: 1fr; }
+  .lukaExperiencePhoto { min-height: 500px; }
+  .lukaExperienceCopy { padding: 80px 22px 60px; }
+  .lukaReview { padding: 82px 22px; }
+  .lukaReviewGrid { grid-template-columns: repeat(2,1fr); margin-top: 48px; }
+  .lukaReviewGrid > div { border-bottom: 1px solid #beb9ae; padding: 22px; }
+  .lukaReviewGrid > div:nth-child(2) { border-right: 1px solid #beb9ae; }
+  .lukaReviewGrid > div:last-child { border-right: 1px solid #beb9ae; }
+  .lukaSeasons { grid-template-columns: 1fr; }
+  .lukaSeasons > div:first-child { height: 470px; }
+  .lukaSeasons > div:last-child { padding: 80px 22px; }
+  .lukaLocation { grid-template-columns: 1fr; padding: 82px 22px 115px; }
+  .lukaLocationVisual { margin-top: 28px; }
+  .lukaLocationVisual img { aspect-ratio: .9; }
+  .lukaLocationVisual > div { left: 4%; right: 4%; }
+  .lukaLocationVisual span { display: none; }
+  .lukaCta { min-height: 640px; }
+  .lukaCta h2 { font-size: clamp(54px, 15vw, 75px); }
+  .lukaFooter { align-items: flex-start; flex-direction: column; gap: 22px; padding: 32px 22px; }
+  .lukaFooter p { text-align: left; }
+  .lukaMobileBook { align-items: center; background: var(--copper); bottom: 0; color: white; display: flex; font-size: 10px; font-weight: 700; gap: 20px; height: 62px; justify-content: center; left: 0; letter-spacing: .13em; position: fixed; right: 0; text-decoration: none; text-transform: uppercase; z-index: 50; }
+}
